@@ -1,15 +1,14 @@
 import React from 'react';
-// import RegistrationForm from './components/RegistrationForm';  // Controlled Component Form
-import FormikForm from './components/FormikForm';  // Formik Form
+import FormikForm from './components/formikForm';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>User Registration</h1>
-      {/* <RegistrationForm /> Uncomment this to use Controlled Component form */}
-      <FormikForm /> {/* Uncomment this to use Formik form */}
+    <div className="container">
+      <h1 className="text-2xl font-semibold">User Registration Form</h1>
+      <FormikForm />
+      {/* If you have other components, you can include them here */}
     </div>
   );
-}
+};
 
 export default App;
