@@ -4,7 +4,7 @@ const RegistrationForm = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null)
+    const [errors, setErrors] = useState(null)
 
     const handleUsername = (e) => {
         const { value } = e.target;
