@@ -10,9 +10,27 @@ const RegistrationForm = () => {
         setUsername(username);
     };
 
+    const handleEmail = (e) => {
+        const { value } = e.target;
+        setEmail(email);
+    };
+
+    const handlePassword = (e) => {
+        const { value } = e.target;
+        setPassword(password);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        if (! username){
+            alert('username required');
+        }
+        if (! email){
+            alert('email required');
+        }
+        if (! password){
+            alert('please enter password');
+        }
     };
 
     return (
