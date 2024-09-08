@@ -12,13 +12,13 @@ const App = () => {
       <div className="container">
         <h1 className="text-2xl font-semibold">Recipe Sharing App</h1>
         <AddRecipeForm />
-        <SearchBar /> {/*  Search bar  */}
+        <SearchBar /> 
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
         </Routes>
-        <FavoritesList /> {/* Favorites list  */}
-        <RecommendationsList /> {/* Recommendation list*/}
+        <FavoritesList /> 
+        <RecommendationsList />
       </div>
     </Router>
   );
