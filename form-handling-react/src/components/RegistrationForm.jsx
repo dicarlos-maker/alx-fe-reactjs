@@ -1,71 +1,62 @@
 import React, { useState } from 'react';
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  // State variables for form fields
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { username, email, password } = formData;
-
-    // Basic validation
-    if (!username || !email || !password) {
-      setError('Please fill out all fields');
-      return;
-    }
-
-    // If valid, log the form data (or send it to an API)
-    setError('');
-    console.log('Form submitted successfully:', formData);
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // You can perform form validation or API call here
+    console.log('Form submitted:', { username, email, password });
   };
 
   return (
-    <div>
-      <h2>Registration Form</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username: </label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Email: </label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Password: </label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      {/* Username input */}
+      <div>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={username} // Controlled input
+          onChange={(e) => setUsername(e.target.value)} // Update state
+          required
+        />
+      </div>
+
+      {/* Email input */}
+      <div>
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email} // Controlled input
+          onChange={(e) => setEmail(e.target.value)} // Update state
+          required
+        />
+      </div>
+
+      {/* Password input */}
+      <div>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password} // Controlled input
+          onChange={(e) => setPassword(e.target.value)} // Update state
+          required
+        />
+      </div>
+
+      {/* Submit button */}
+      <button type="submit">Register</button>
+    </form>
   );
 };
 
