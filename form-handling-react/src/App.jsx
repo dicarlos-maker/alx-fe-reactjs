@@ -6,6 +6,7 @@ const App = () => {
     <div className="container">
       <h1 className="text-2xl font-semibold">Recipe Sharing App</h1>
       <FormikForm />
+      {/* ... other components */}
     </div>
   );
 };
