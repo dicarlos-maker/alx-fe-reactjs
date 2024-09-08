@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
 const RegistrationForm = () => {
-    const [formData, setFormData] = useState({ username: '', email: '', password: '' });
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({ ...prevState, [name]: value }));
+    const handleUsername = (e) => {
+        const { value } = e.target;
+        setUsername(username);
     };
 
     const handleSubmit = (e) => {
@@ -19,14 +21,14 @@ const RegistrationForm = () => {
                 required
                 type="text"
                 name="username"
-                value={formData.name}
+                value={username}
                 onChange={handleChange}
             />
             <input
                 required
                 type="email"
                 name="email"
-                value={formData.email}
+                value={email}
                 onChange={handleChange}
             />
 
@@ -34,7 +36,7 @@ const RegistrationForm = () => {
             required
                 type="password"
                 name="password"
-                value={formData.password}
+                value={password}
                 onChange={handleChange}
             />
             <button type="submit">Submit</button>
