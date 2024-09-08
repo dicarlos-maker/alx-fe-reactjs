@@ -23,13 +23,13 @@ const RegistrationForm = () => {
 
     const validateUsername = () => {
         if (!username) {
-            setError('username is required')
+            setErrors('username is required')
         }
     }
 
     const validateEmail = () => {
         if (!email) {
-            setError('email is required')
+            setErrors('email is required')
         }
     }
 
@@ -45,7 +45,7 @@ const RegistrationForm = () => {
 
     return (
         <>
-
+            { errors ? <p>{errors}</p> : <p></p>}
             <form onSubmit={handleSubmit}>
                 <input
                     required
