@@ -4,6 +4,7 @@ const RegistrationForm = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null)
 
     const handleUsername = (e) => {
         const { value } = e.target;
@@ -20,17 +21,26 @@ const RegistrationForm = () => {
         setPassword(password);
     };
 
+    const validateUsername = () => {
+        if (!username) {
+            setError('username is required')
+        }
+    }
+
+    const validateEmail = () => {
+        if (!email) {
+            setError('email is required')
+        }
+    }
+
+    const validatePassword = () => {
+        if (!password) {
+            setError('username is required')
+        }
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (! username){
-            alert('username required');
-        }
-        if (! email){
-            alert('email required');
-        }
-        if (! password){
-            alert('please enter password');
-        }
     };
 
     return (
@@ -41,6 +51,7 @@ const RegistrationForm = () => {
                 name="username"
                 value={username}
                 onChange={handleChange}
+                onBlur={validateUsername}
             />
             <input
                 required
@@ -48,14 +59,15 @@ const RegistrationForm = () => {
                 name="email"
                 value={email}
                 onChange={handleChange}
+                onBlur={validateEmail}
             />
-
             <input
-            required
+                required
                 type="password"
                 name="password"
                 value={password}
                 onChange={handleChange}
+                onBlur={validatePassword}
             />
             <button type="submit">Submit</button>
         </form>
