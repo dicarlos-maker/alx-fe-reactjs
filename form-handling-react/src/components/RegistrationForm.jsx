@@ -4,72 +4,56 @@ const RegistrationForm = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState(null)
+    const [errors, setErrors] = useState([])
 
-    const handleUsername = (e) => {
-        const { value } = e.target;
-        setUsername(username);
-    };
-
-    const handleEmail = (e) => {
-        const { value } = e.target;
-        setEmail(email);
-    };
-
-    const handlePassword = (e) => {
-        const { value } = e.target;
-        setPassword(password);
-    };
-
-    const validateUsername = () => {
-        if (!username) {
-            setErrors('username is required')
+ 
+    const validate = () =>{
+        if(!username){
+            setErrors(...errors.concat('username is required'))
         }
-    }
-
-    const validateEmail = () => {
-        if (!email) {
-            setErrors('email is required')
+        if(!password){
+            setErrors(...errors.concat('password is required'))
         }
-    }
-
-    const validatePassword = () => {
-        if (!password) {
-            setErrors('username is required')
+        if(!email){
+            setErrors(...errors.concat('email is required'))
         }
+
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (errors.length === 0){
+            console.log('uploaded successfully')
+        }
+        else{
+            console.log('An error occured.')
+        }
     };
 
     return (
         <>
-            { errors ? <p>{errors}</p> : <p></p>}
+        { errors? errors.map(e => <p>e</p>): <p></p>}
             <form onSubmit={handleSubmit}>
                 <input
                     required
                     type="text"
                     name="username"
                     value={username}
-                    onChange={handleChange}
-                    onBlur={validateUsername}
+                    onChange={(e)=>{e.target.value}}
                 />
                 <input
                     required
                     type="email"
                     name="email"
                     value={email}
-                    onChange={handleChange}
-                    onBlur={validateEmail}
+                    onChange={(e)=>{e.target.value}}
                 />
                 <input
                     required
                     type="password"
                     name="password"
                     value={password}
-                    onChange={handleChange}
-                    onBlur={validatePassword}
+                    onChange={(e)=>{e.target.value}}
                 />
                 <button type="submit">Submit</button>
             </form>
