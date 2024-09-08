@@ -44,33 +44,36 @@ const RegistrationForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                required
-                type="text"
-                name="username"
-                value={username}
-                onChange={handleChange}
-                onBlur={validateUsername}
-            />
-            <input
-                required
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-                onBlur={validateEmail}
-            />
-            <input
-                required
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                onBlur={validatePassword}
-            />
-            <button type="submit">Submit</button>
-        </form>
+        <>
+
+            <form onSubmit={handleSubmit}>
+                <input
+                    required
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={handleChange}
+                    onBlur={validateUsername}
+                />
+                <input
+                    required
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={handleChange}
+                    onBlur={validateEmail}
+                />
+                <input
+                    required
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    onBlur={validatePassword}
+                />
+                <button type="submit">Submit</button>
+            </form>
+        </>
     );
 };
 
