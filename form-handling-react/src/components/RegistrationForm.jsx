@@ -35,7 +35,7 @@ const RegistrationForm = () => {
 
     const validatePassword = () => {
         if (!password) {
-            setError('username is required')
+            setErrors('username is required')
         }
     }
 
