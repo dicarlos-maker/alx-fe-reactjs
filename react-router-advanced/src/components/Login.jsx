@@ -4,7 +4,7 @@ function Login({ onLogin }) {
   const [username, setUsername] = useState('');
 
   const handleLogin = () => {
-    // Simulate login
+   
     onLogin(true);
   };
 
