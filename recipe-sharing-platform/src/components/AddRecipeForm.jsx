@@ -10,21 +10,27 @@ const AddRecipeForm = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    
+  // Validation function
+  const validate = () => {
     const errors = {};
     if (!title) errors.title = 'Recipe title is required';
     if (!ingredients) errors.ingredients = 'Ingredients are required';
     if (!instructions) errors.instructions = 'Preparation steps are required';
     if (!steps) errors.steps = 'Additional steps are required';
+    return errors;
+  };
 
-    if (Object.keys(errors).length > 0) {
-      setErrors(errors);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Validate form fields
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
+    // If there are no validation errors, proceed with adding the recipe
     const ingredientsArray = ingredients.split('\n').map(ingredient => ingredient.trim()).filter(ingredient => ingredient);
 
     const newRecipe = {
@@ -37,6 +43,7 @@ const AddRecipeForm = () => {
       steps, 
     };
 
+    // Add the new recipe to the data array (in a real app, you might send this to a server)
     data.push(newRecipe);
 
     navigate('/');
