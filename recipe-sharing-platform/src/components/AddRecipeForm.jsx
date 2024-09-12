@@ -6,34 +6,36 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
+  const [steps, setSteps] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-  
-    if (!title || !ingredients || !instructions) {
+    
+    if (!title || !ingredients || !instructions || !steps) {
       alert('Please fill out all fields.');
       return;
     }
 
-  
+    
     const ingredientsArray = ingredients.split('\n').map(ingredient => ingredient.trim()).filter(ingredient => ingredient);
 
-   
+    
     const newRecipe = {
       id: data.length + 1, 
       title,
-      summary: '',
+      summary: '', 
       image: '',  
       ingredients: ingredientsArray,
       instructions,
+      steps, 
     };
 
    
     data.push(newRecipe);
 
-   
+    
     navigate('/');
   };
 
@@ -75,6 +77,19 @@ const AddRecipeForm = () => {
             id="instructions"
             value={instructions}
             onChange={(e) => setInstructions(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md"
+            rows="6"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold mb-2" htmlFor="steps">
+            Additional Steps
+          </label>
+          <textarea
+            id="steps"
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             className="w-full p-2 border border-gray-300 rounded-md"
             rows="6"
             required
