@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Jollof Rice (West Africa)",
+        "summary": "a flavorful West African dish of rice cooked in a spiced tomato sauce with aromatic seasonings and often paired with meat or vegetables.",
+        "image": "https://www.shutterstock.com/image-photo/jollof-rice-popular-dish-west-600nw-2087420251.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Bobotie (South Africa)",
+        "summary": "a traditional South African dish consisting of spiced minced meat baked with a creamy egg topping, often mixed with dried fruits and nuts for a unique sweet and savory flavor.",
+        "image": "https://miro.medium.com/v2/resize:fit:663/1*jc3-HJu9v05KnKZxqQvCaQ.png"
+    }
+]
