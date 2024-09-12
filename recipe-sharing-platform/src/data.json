@@ -1,14 +1,49 @@
 [
     {
-        "id": 1,
-        "title": "Jollof Rice (West Africa)",
-        "summary": "a flavorful West African dish of rice cooked in a spiced tomato sauce with aromatic seasonings and often paired with meat or vegetables.",
-        "image": "https://www.shutterstock.com/image-photo/jollof-rice-popular-dish-west-600nw-2087420251.jpg"
+      "id": 1,
+      "title": "Jollof Rice (West Africa)",
+      "summary": "A flavorful West African dish of rice cooked in a spiced tomato sauce with aromatic seasonings and often paired with meat or vegetables.",
+      "image": "https://www.shutterstock.com/image-photo/jollof-rice-popular-dish-west-600nw-2087420251.jpg",
+      "ingredients": [
+        "2 cups long-grain parboiled rice",
+        "1/4 cup vegetable oil",
+        "1 onion, chopped",
+        "1 bell pepper, chopped",
+        "4 tomatoes, blended",
+        "2 tablespoons tomato paste",
+        "2 cloves garlic, minced",
+        "1 teaspoon ginger, minced",
+        "1 teaspoon paprika",
+        "1 teaspoon thyme",
+        "2 bay leaves",
+        "1-2 cups chicken or vegetable broth",
+        "1 cup mixed vegetables (e.g., peas, carrots)",
+        "Salt and pepper to taste",
+        "Optional: Chicken, beef, or fish, cooked"
+      ],
+      "instructions": "1. Heat the oil in a large pot. 2. Sauté onions, garlic, and ginger until onions are translucent. 3. Add bell pepper, blended tomatoes, and tomato paste. 4. Cook for about 10 minutes, stirring occasionally. 5. Stir in paprika, thyme, bay leaves, salt, and pepper. 6. Add the rice and stir to coat with the tomato mixture. 7. Pour in the broth and bring to a boil. Reduce heat, cover, and simmer for 20-30 minutes, or until rice is cooked and liquid is absorbed. 8. Add mixed vegetables and cook for another 5 minutes. 9. If using meat or fish, stir in at this stage. 10. Fluff the rice with a fork and serve."
     },
     {
-        "id": 2,
-        "title": "Bobotie (South Africa)",
-        "summary": "a traditional South African dish consisting of spiced minced meat baked with a creamy egg topping, often mixed with dried fruits and nuts for a unique sweet and savory flavor.",
-        "image": "https://miro.medium.com/v2/resize:fit:663/1*jc3-HJu9v05KnKZxqQvCaQ.png"
+      "id": 2,
+      "title": "Bobotie (South Africa)",
+      "summary": "A traditional South African dish consisting of spiced minced meat baked with a creamy egg topping, often mixed with dried fruits and nuts for a unique sweet and savory flavor.",
+      "image": "https://miro.medium.com/v2/resize:fit:663/1*jc3-HJu9v05KnKZxqQvCaQ.png",
+      "ingredients": [
+        "500g ground beef or lamb",
+        "2 onions, finely chopped",
+        "2 cloves garlic, minced",
+        "2 slices white bread",
+        "1/2 cup milk",
+        "1/4 cup raisins",
+        "1/4 cup slivered almonds",
+        "2 tablespoons curry powder",
+        "1 tablespoon sugar",
+        "1 tablespoon vinegar",
+        "1 tablespoon lemon juice",
+        "2 eggs",
+        "Salt and pepper to taste"
+      ],
+      "instructions": "1. Preheat your oven to 180°C (350°F). 2. Soak the bread in milk and then squeeze out the milk. Crumble the bread. 3. In a pan, cook the onions and garlic until soft. Add ground meat and cook until browned. 4. Add curry powder, sugar, vinegar, lemon juice, raisins, almonds, and crumbled bread. Mix well. 5. Season with salt and pepper. Transfer the mixture to a baking dish. 6. Beat the eggs with a bit of milk and pour over the meat mixture. 7. Bake for 45 minutes, or until the top is golden brown. 8. Serve with yellow rice and chutney."
     }
-]
+  ]
+  
