@@ -20,7 +20,7 @@ const Search = () => {
     
     try {
       const userData = await fetchUserData(username);
-      // Check if the userData is null or has a "message" indicating the user was not found
+      
       if (!userData || userData.message === 'Not Found') {
         setError('Looks like we can\'t find the user.');
         setUser(null);
@@ -28,7 +28,7 @@ const Search = () => {
         setUser(userData);
       }
     } catch (err) {
-      setError('An error occurred while fetching the user data.');
+      setError('Looks like we can\'t find the user.');
       setUser(null);
     } finally {
       setLoading(false);
