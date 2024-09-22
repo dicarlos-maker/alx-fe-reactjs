@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const githubApiKey = import.meta.env.VITE_GITHUB_API_KEY;
 
 const fetchUserData = async (username, location, minRepos) => {
