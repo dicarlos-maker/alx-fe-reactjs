@@ -29,7 +29,7 @@ const Search = () => {
         setUser(userData); // Set user data if found
       }
     } catch (err) {
-      setError("Looks like we can't find the user."); // Handle API errors
+      setError("Looks like we cant find the user."); // Handle API errors
       setUser(null);
     } finally {
       setLoading(false);
