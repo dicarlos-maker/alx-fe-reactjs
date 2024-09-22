@@ -8,7 +8,7 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     if (!username) {
       setError('Please enter a valid username.');
       return;
@@ -19,14 +19,14 @@ const Search = () => {
     
     try {
       const userData = await fetchUserData(username);
-      if (!userData) {
-        setError('User not found.');
+      if (!userData || userData.message === 'Not Found') {
+        setError('Looks like we can\'t find the user.');
         setUser(null);
       } else {
         setUser(userData);
       }
     } catch (err) {
-      setError('Looks like we can\'t find the user.');
+      setError('An error occurred while fetching the user data.');
       setUser(null);
     } finally {
       setLoading(false);
