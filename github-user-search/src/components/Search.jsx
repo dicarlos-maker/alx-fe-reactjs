@@ -1,3 +1,4 @@
+// src/components/Search.jsx
 import React, { useState } from 'react';
 import fetchUserData from '../services/githubService';
 
@@ -8,7 +9,7 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault(); // Prevent page refresh
     if (!username) {
       setError('Please enter a valid username.');
       return;
@@ -19,6 +20,7 @@ const Search = () => {
     
     try {
       const userData = await fetchUserData(username);
+      // Check if the userData is null or has a "message" indicating the user was not found
       if (!userData || userData.message === 'Not Found') {
         setError('Looks like we can\'t find the user.');
         setUser(null);
