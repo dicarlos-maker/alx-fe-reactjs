@@ -14,21 +14,22 @@ const Search = () => {
       setError('Please enter a valid username.');
       return;
     }
-    
+
     setLoading(true);
     setError('');
-    
+
     try {
       const userData = await fetchUserData(username);
       
+      // Check if userData is null or if GitHub API returned 'Not Found'
       if (!userData || userData.message === 'Not Found') {
-        setError('Looks like we can\'t find the user.');
+        setError("an error occured while fetching data."); // Set error if user not found
         setUser(null);
       } else {
-        setUser(userData);
+        setUser(userData); // Set user data if found
       }
     } catch (err) {
-      setError('Looks like we can\'t find the user.');
+      setError("Looks like we can't find the user."); // Handle API errors
       setUser(null);
     } finally {
       setLoading(false);
@@ -49,7 +50,7 @@ const Search = () => {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500">{error}</p>} {/* Display error if set */}
       {user && (
         <div className="mt-4">
           <h2 className="text-xl">{user.name || 'No Name Available'}</h2>
