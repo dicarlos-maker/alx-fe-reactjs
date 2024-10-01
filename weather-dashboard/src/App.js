@@ -30,10 +30,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      
         <h1>Weather Dashboard</h1>
 
-       
+        {/* Search Bar */}
         <div>
           <input
             type="text"
@@ -43,12 +42,25 @@ function App() {
           <button onClick={searchPressed}>Search</button>
         </div>
 
+        {/* Weather Data Display */}
         {typeof weather.main !== "undefined" ? (
           <div>
             <p>{weather.name}</p>
             <p>{weather.main.temp}°C</p>
             <p>{weather.weather[0].main}</p>
             <p>({weather.weather[0].description})</p>
+
+            {/* Weather Icon */}
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+              alt={weather.weather[0].description}
+            />
+
+            {/* Wind Speed */}
+            <p>Wind Speed: {(weather.wind.speed * 3.6).toFixed(2)} km/h</p>
+
+            {/* Humidity */}
+            <p>Humidity: {weather.main.humidity}%</p>
           </div>
         ) : (
           ""
